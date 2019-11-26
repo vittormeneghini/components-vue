@@ -1,4 +1,4 @@
-# calc-vue
+# Components with vue
 
 ## Project setup
 ```
