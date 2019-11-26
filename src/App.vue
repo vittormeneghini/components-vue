@@ -1,28 +1,30 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div>
+    <Header title="Schedule" message="CRUD of contacts with vue using components, watch, life cycle"></Header>
+    <form-contact v-bind:contacts="contacts"></form-contact>
+
+    <ListContact v-bind:contacts="contacts"></ListContact>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Form from './components/Form.vue'
+import Header from './components/Header.vue'
+import ListContact from './components/ListContact.vue'
+import 'bootstrap/dist/css/bootstrap.css'
+import 'font-awesome/css/font-awesome.css'
 
 export default {
   name: 'app',
-  components: {
-    HelloWorld
+  data(){
+    return{
+      contacts: []
+    }
+  },
+  components:{
+    'form-contact': Form,
+     Header,
+     ListContact
   }
 }
 </script>
-
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
